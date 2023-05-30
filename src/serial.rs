@@ -7,7 +7,6 @@ pub enum Error {
     SetFail(String),
     Convert(String),
 }
-
 fn i32tobaud(i: i32) -> Result<libc::speed_t, Error> {
     Ok(match i {
         0 => libc::B0,

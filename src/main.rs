@@ -15,7 +15,6 @@ use rating::ui;
 //   }
 use std::env;
 use std::io::{self, Write};
-use std::os::fd::{AsFd, BorrowedFd};
 fn main() {
     rating::logger::init(
         std::fs::File::options()
@@ -24,6 +23,7 @@ fn main() {
             .open("log.txt")
             .unwrap(),
     );
+    rating::logger::set_level(rating::logger::Level::Trace);
     ui::App::run(Settings::default());
     // Counter::run(Settings::default());
     // let ava_ports = serialport::available_ports().expect("Failed to get available ports");
