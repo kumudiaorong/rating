@@ -6,30 +6,42 @@ use iced::widget::{
     slider, text, vertical_space,
 };
 use iced::{alignment, executor, theme, Alignment, Color};
-use iced::{Application, Command, Element, Length, Settings, Theme};
+use iced::{subscription, Application, Command, Element, Length, Settings, Subscription, Theme};
 #[derive(Debug, Clone)]
-pub enum Message {
+pub enum AppMessage {
     Selected(String),
     OpenSerial,
+    // Receive(crate::msg::RateList),
+    // AvailablePorts(Vec<String>),
+    Tick,
 }
+use msg::MsgType;
+use std::sync::mpsc;
 pub struct App {
-    core: core::Core,
+    sender: mpsc::Sender<Vec<u8>>,
+    receiver: mpsc::Receiver<Vec<u8>>,
     choosed: Option<String>,
     available_ports: Vec<String>,
+    ratelist: crate::msg::RateList,
     count: i32,
 }
+use crate::msg;
+use msg::msg_type::Type;
+use prost::Message;
 impl Application for App {
     type Executor = executor::Default;
-    type Message = Message;
+    type Message = AppMessage;
     type Theme = Theme;
-    type Flags = ();
+    type Flags = (mpsc::Sender<Vec<u8>>, mpsc::Receiver<Vec<u8>>);
 
-    fn new(_flags: Self::Flags) -> (Self, Command<Message>) {
+    fn new(flags: Self::Flags) -> (Self, Command<AppMessage>) {
         (
             Self {
-                core: core::Core::new(),
+                sender: flags.0,
+                receiver: flags.1,
                 choosed: None,
                 available_ports: core::available_ports(),
+                ratelist: msg::RateList::default(),
                 count: 0,
             },
             Command::none(),
@@ -40,41 +52,70 @@ impl Application for App {
         String::from("Rating")
     }
 
-    fn update(&mut self, message: Message) -> Command<Message> {
+    fn update(&mut self, message: AppMessage) -> Command<AppMessage> {
         self.count += 1;
         match message {
-            Message::Selected(path) => {
+            AppMessage::Selected(path) => {
                 self.choosed = Some(path);
             }
-            Message::OpenSerial => {
+            AppMessage::OpenSerial => {
                 if let Some(ref path) = self.choosed {
-                    println!("open {}", path);
-                    self.core.open(path);
-                    println!("right {}", path);
-                    self.core.right();
-                    println!("query {}", path);
-                    self.core.query();
-                    println!("over {}", path);
+                    self.sender
+                        .send(msg::MsgType::new(msg::msg_type::Type::Open).encode_to_vec())
+                        .unwrap();
+                    self.sender
+                        .send(msg::Port::new(path.clone()).encode_to_vec())
+                        .unwrap();
+                    self.sender
+                        .send(msg::MsgType::new(msg::msg_type::Type::Right).encode_to_vec())
+                        .unwrap();
+                    self.sender
+                        .send(msg::MsgType::new(msg::msg_type::Type::Query).encode_to_vec())
+                        .unwrap();
+                }
+            }
+            AppMessage::Tick => {
+                self.available_ports = core::available_ports();
+                match self.receiver.try_recv() {
+                    Ok(rcev) => match MsgType::decode(rcev.as_slice()) {
+                        Ok(tp) => match tp.r#type() {
+                            Type::Check => (),
+                            other => match other {
+                                Type::Query => match self.receiver.recv() {
+                                    Ok(rcev) => match msg::RateList::decode(rcev.as_slice()) {
+                                        Ok(rl) => self.ratelist = rl,
+                                        Err(_) => (),
+                                    },
+                                    Err(_) => (),
+                                },
+                                _ => (),
+                            },
+                        },
+                        Err(_) => (),
+                    },
+                    Err(_) => (),
                 }
             }
         }
         Command::none()
     }
-
-    fn view(&self) -> Element<Message> {
+    fn subscription(&self) -> Subscription<AppMessage> {
+        iced::time::every(std::time::Duration::from_millis(10)).map(|_| AppMessage::Tick)
+    }
+    fn view(&self) -> Element<AppMessage> {
         let available_list = container(
             pick_list(
                 &self.available_ports,
                 self.choosed.clone(),
-                Message::Selected,
+                AppMessage::Selected,
             )
             .placeholder("choose a port"),
         )
         .width(Length::Shrink)
         .center_x()
         .center_y();
-
         // container("tes").style(iced::theme::Container::Custom(Box::new(MyContainerStyle))).padding(2),
+
         container(row![
             // container("tes").style(theme::Container::Custom(Box::new(Container::default()))),
             container("tes")
@@ -94,23 +135,22 @@ impl Application for App {
                 scrollable(
                     // text(self.choosed.clone().unwrap_or("".to_string())).width(Length::Fill),
                     widget::Column::with_children(
-                        self.core
-                            .ratidx
+                        self.ratelist
+                            .rates
                             .iter()
-                            .map(|(k, v)| Element::from(row![
-                                text(k)
-                                    .width(100)
-                                    .horizontal_alignment(alignment::Horizontal::Center)
-                                    .vertical_alignment(alignment::Vertical::Center),
-                                match v {
-                                    core::DevState::Right => text("ready"),
-                                    core::DevState::Rate(s) => text(s),
-                                }
-                                .width(100)
-                                .horizontal_alignment(alignment::Horizontal::Center)
-                                .vertical_alignment(alignment::Vertical::Center),
-                            ]))
-                            .collect::<Vec<Element<Message>>>()
+                            .map(|r| {
+                                Element::from(row![
+                                    text(r.idx)
+                                        .width(100)
+                                        .horizontal_alignment(alignment::Horizontal::Center)
+                                        .vertical_alignment(alignment::Vertical::Center),
+                                    text(r.state.as_str())
+                                        .width(100)
+                                        .horizontal_alignment(alignment::Horizontal::Center)
+                                        .vertical_alignment(alignment::Vertical::Center)
+                                ])
+                            })
+                            .collect::<Vec<Element<AppMessage>>>()
                     )
                     .width(Length::Shrink)
                     .align_items(Alignment::Center) // .padding([0, 0, 0, 0])
@@ -121,7 +161,7 @@ impl Application for App {
             ],
             available_list,
             button("open")
-                .on_press(Message::OpenSerial)
+                .on_press(AppMessage::OpenSerial)
                 .width(Length::Shrink)
         ])
         .center_x()
@@ -132,9 +172,9 @@ impl Application for App {
         .into()
 
         // row![
-        //     button("Increment").on_press(Message::IncrementPressed),
+        //     button("Increment").on_press(AppMessage::IncrementPressed),
         //     text(self.value).size(50),
-        //     button("Decrement").on_press(Message::DecrementPressed)
+        //     button("Decrement").on_press(AppMessage::DecrementPressed)
         // ]
         // .padding(20)
         // .align_items(Alignment::Center)

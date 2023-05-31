@@ -15,6 +15,7 @@ use rating::ui;
 //   }
 use std::env;
 use std::io::{self, Write};
+use std::sync::mpsc;
 fn main() {
     rating::logger::init(
         std::fs::File::options()
@@ -24,7 +25,15 @@ fn main() {
             .unwrap(),
     );
     rating::logger::set_level(rating::logger::Level::Trace);
-    ui::App::run(Settings::default());
+    let (tx0, rx0) = mpsc::channel();
+    let (tx1, rx1) = mpsc::channel();
+    let mut core = rating::core::Core::new(tx1, rx0);
+
+    std::thread::spawn(move || {
+        core.run();
+    });
+
+    ui::App::run(Settings::with_flags((tx0, rx1)));
     // Counter::run(Settings::default());
     // let ava_ports = serialport::available_ports().expect("Failed to get available ports");
 
