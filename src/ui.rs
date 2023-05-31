@@ -102,10 +102,13 @@ impl Application for App {
                                     .width(100)
                                     .horizontal_alignment(alignment::Horizontal::Center)
                                     .vertical_alignment(alignment::Vertical::Center),
-                                text(v)
-                                    .width(100)
-                                    .horizontal_alignment(alignment::Horizontal::Center)
-                                    .vertical_alignment(alignment::Vertical::Center)
+                                match v {
+                                    core::DevState::Right => text("ready"),
+                                    core::DevState::Rate(s) => text(s),
+                                }
+                                .width(100)
+                                .horizontal_alignment(alignment::Horizontal::Center)
+                                .vertical_alignment(alignment::Vertical::Center),
                             ]))
                             .collect::<Vec<Element<Message>>>()
                     )
@@ -127,6 +130,7 @@ impl Application for App {
         .height(Length::Fill)
         .padding([5, 0, 0, 0])
         .into()
+
         // row![
         //     button("Increment").on_press(Message::IncrementPressed),
         //     text(self.value).size(50),

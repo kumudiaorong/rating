@@ -1,0 +1,1353 @@
+[TRACE] Core::new()
+[TRACE] send right to 1
+[TRACE] recieve right err from 1
+[TRACE] send right to 2
+[TRACE] recieve right err from 2
+[TRACE] send right to 3
+[TRACE] recieve right err from 3
+[TRACE] send right to 4
+[TRACE] recieve right err from 4
+[TRACE] send right to 5
+[TRACE] recieve right ok from 5
+[TRACE] send right to 6
+[TRACE] recieve right err from 6
+[TRACE] send right to 7
+[TRACE] recieve right err from 7
+[TRACE] send right to 8
+[TRACE] recieve right err from 8
+[TRACE] send right to 9
+[TRACE] recieve right err from 9
+[TRACE] send right to 10
+[TRACE] recieve right ok from 10
+[TRACE] send right to 11
+[TRACE] recieve right err from 11
+[TRACE] send right to 12
+[TRACE] recieve right err from 12
+[TRACE] send right to 13
+[TRACE] recieve right err from 13
+[TRACE] send right to 14
+[TRACE] recieve right err from 14
+[TRACE] send right to 15
+[TRACE] recieve right ok from 15
+[TRACE] send right to 16
+[TRACE] recieve right err from 16
+[TRACE] send right to 17
+[TRACE] recieve right err from 17
+[TRACE] send right to 18
+[TRACE] recieve right err from 18
+[TRACE] send right to 19
+[TRACE] recieve right err from 19
+[TRACE] send right to 20
+[TRACE] recieve right ok from 20
+[TRACE] send right to 21
+[TRACE] recieve right err from 21
+[TRACE] send right to 22
+[TRACE] recieve right err from 22
+[TRACE] send right to 23
+[TRACE] recieve right err from 23
+[TRACE] send right to 24
+[TRACE] recieve right err from 24
+[TRACE] send right to 25
+[TRACE] recieve right ok from 25
+[TRACE] send right to 26
+[TRACE] recieve right err from 26
+[TRACE] send right to 27
+[TRACE] recieve right err from 27
+[TRACE] send right to 28
+[TRACE] recieve right err from 28
+[TRACE] send right to 29
+[TRACE] recieve right err from 29
+[TRACE] send right to 30
+[TRACE] recieve right ok from 30
+[TRACE] send right to 31
+[TRACE] recieve right err from 31
+[TRACE] send right to 32
+[TRACE] recieve right err from 32
+[TRACE] send right to 33
+[TRACE] recieve right err from 33
+[TRACE] send right to 34
+[TRACE] recieve right err from 34
+[TRACE] send right to 35
+[TRACE] recieve right ok from 35
+[TRACE] send right to 36
+[TRACE] recieve right err from 36
+[TRACE] send right to 37
+[TRACE] recieve right err from 37
+[TRACE] send right to 38
+[TRACE] recieve right err from 38
+[TRACE] send right to 39
+[TRACE] recieve right err from 39
+[TRACE] send right to 40
+[TRACE] recieve right ok from 40
+[TRACE] send right to 41
+[TRACE] recieve right err from 41
+[TRACE] send right to 42
+[TRACE] recieve right err from 42
+[TRACE] send right to 43
+[TRACE] recieve right err from 43
+[TRACE] send right to 44
+[TRACE] recieve right err from 44
+[TRACE] send right to 45
+[TRACE] recieve right ok from 45
+[TRACE] send right to 46
+[TRACE] recieve right err from 46
+[TRACE] send right to 47
+[TRACE] recieve right err from 47
+[TRACE] send right to 48
+[TRACE] recieve right err from 48
+[TRACE] send right to 49
+[TRACE] recieve right err from 49
+[TRACE] send right to 50
+[TRACE] recieve right ok from 50
+[TRACE] send right to 51
+[TRACE] recieve right err from 51
+[TRACE] send right to 52
+[TRACE] recieve right err from 52
+[TRACE] send right to 53
+[TRACE] recieve right err from 53
+[TRACE] send right to 54
+[TRACE] recieve right err from 54
+[TRACE] send right to 55
+[TRACE] recieve right ok from 55
+[TRACE] send right to 56
+[TRACE] recieve right err from 56
+[TRACE] send right to 57
+[TRACE] recieve right err from 57
+[TRACE] send right to 58
+[TRACE] recieve right err from 58
+[TRACE] send right to 59
+[TRACE] recieve right err from 59
+[TRACE] send right to 60
+[TRACE] recieve right ok from 60
+[TRACE] send right to 61
+[TRACE] recieve right err from 61
+[TRACE] send right to 62
+[TRACE] recieve right err from 62
+[TRACE] send right to 63
+[TRACE] recieve right err from 63
+[TRACE] send right to 64
+[TRACE] recieve right err from 64
+[TRACE] send right to 65
+[TRACE] recieve right ok from 65
+[TRACE] send right to 66
+[TRACE] recieve right err from 66
+[TRACE] send right to 67
+[TRACE] recieve right err from 67
+[TRACE] send right to 68
+[TRACE] recieve right err from 68
+[TRACE] send right to 69
+[TRACE] recieve right err from 69
+[TRACE] send right to 70
+[TRACE] recieve right ok from 70
+[TRACE] send right to 71
+[TRACE] recieve right err from 71
+[TRACE] send right to 72
+[TRACE] recieve right err from 72
+[TRACE] send right to 73
+[TRACE] recieve right err from 73
+[TRACE] send right to 74
+[TRACE] recieve right err from 74
+[TRACE] send right to 75
+[TRACE] recieve right ok from 75
+[TRACE] send right to 76
+[TRACE] recieve right err from 76
+[TRACE] send right to 77
+[TRACE] recieve right err from 77
+[TRACE] send right to 78
+[TRACE] recieve right err from 78
+[TRACE] send right to 79
+[TRACE] recieve right err from 79
+[TRACE] send right to 80
+[TRACE] recieve right ok from 80
+[TRACE] send right to 81
+[TRACE] recieve right err from 81
+[TRACE] send right to 82
+[TRACE] recieve right err from 82
+[TRACE] send right to 83
+[TRACE] recieve right err from 83
+[TRACE] send right to 84
+[TRACE] recieve right err from 84
+[TRACE] send right to 85
+[TRACE] recieve right ok from 85
+[TRACE] send right to 86
+[TRACE] recieve right err from 86
+[TRACE] send right to 87
+[TRACE] recieve right err from 87
+[TRACE] send right to 88
+[TRACE] recieve right err from 88
+[TRACE] send right to 89
+[TRACE] recieve right err from 89
+[TRACE] send right to 90
+[TRACE] recieve right ok from 90
+[TRACE] send right to 91
+[TRACE] recieve right err from 91
+[TRACE] send right to 92
+[TRACE] recieve right err from 92
+[TRACE] send right to 93
+[TRACE] recieve right err from 93
+[TRACE] send right to 94
+[TRACE] recieve right err from 94
+[TRACE] send right to 95
+[TRACE] recieve right ok from 95
+[TRACE] send right to 96
+[TRACE] recieve right err from 96
+[TRACE] send right to 97
+[TRACE] recieve right err from 97
+[TRACE] send right to 98
+[TRACE] recieve right err from 98
+[TRACE] send right to 99
+[TRACE] recieve right err from 99
+[TRACE] send query to 90
+[TRACE] recieve query ok from 90
+[TRACE] send query to 50
+[TRACE] recieve query ok from 50
+[TRACE] send query to 75
+[TRACE] recieve query ok from 75
+[TRACE] send query to 35
+[TRACE] recieve query ok from 35
+[TRACE] send query to 30
+[TRACE] recieve query ok from 30
+[TRACE] send query to 40
+[TRACE] recieve query ok from 40
+[TRACE] send query to 10
+[TRACE] recieve query ok from 10
+[TRACE] send query to 70
+[TRACE] recieve query ok from 70
+[TRACE] send query to 95
+[TRACE] recieve query ok from 95
+[TRACE] send query to 60
+[TRACE] recieve query ok from 60
+[TRACE] send query to 55
+[TRACE] recieve query ok from 55
+[TRACE] send query to 65
+[TRACE] recieve query ok from 65
+[TRACE] send query to 5
+[TRACE] recieve query ok from 5
+[TRACE] send query to 15
+[TRACE] recieve query ok from 15
+[TRACE] send query to 20
+[TRACE] recieve query ok from 20
+[TRACE] send query to 45
+[TRACE] recieve query ok from 45
+[TRACE] send query to 85
+[TRACE] recieve query ok from 85
+[TRACE] send query to 80
+[TRACE] recieve query ok from 80
+[TRACE] send query to 25
+[TRACE] recieve query ok from 25
+[TRACE] Core::new()
+[TRACE] send right to 1
+[TRACE] send right to 1
+[TRACE] send right to 1
+[TRACE] send right to 1
+[TRACE] send right to 1
+[TRACE] send right to 2
+[TRACE] send right to 2
+[TRACE] send right to 2
+[TRACE] send right to 2
+[TRACE] send right to 2
+[TRACE] send right to 3
+[TRACE] send right to 3
+[TRACE] send right to 3
+[TRACE] send right to 3
+[TRACE] send right to 3
+[TRACE] send right to 4
+[TRACE] send right to 4
+[TRACE] send right to 4
+[TRACE] send right to 4
+[TRACE] send right to 4
+[TRACE] send right to 5
+[TRACE] recieve right ok from 5
+[TRACE] send right to 6
+[TRACE] send right to 6
+[TRACE] send right to 6
+[TRACE] send right to 6
+[TRACE] send right to 6
+[TRACE] send right to 7
+[TRACE] send right to 7
+[TRACE] send right to 7
+[TRACE] send right to 7
+[TRACE] send right to 7
+[TRACE] send right to 8
+[TRACE] send right to 8
+[TRACE] send right to 8
+[TRACE] send right to 8
+[TRACE] send right to 8
+[TRACE] send right to 9
+[TRACE] send right to 9
+[TRACE] send right to 9
+[TRACE] send right to 9
+[TRACE] send right to 9
+[TRACE] send right to 10
+[TRACE] recieve right ok from 10
+[TRACE] send right to 11
+[TRACE] send right to 11
+[TRACE] send right to 11
+[TRACE] send right to 11
+[TRACE] send right to 11
+[TRACE] send right to 12
+[TRACE] send right to 12
+[TRACE] send right to 12
+[TRACE] send right to 12
+[TRACE] send right to 12
+[TRACE] send right to 13
+[TRACE] send right to 13
+[TRACE] send right to 13
+[TRACE] send right to 13
+[TRACE] send right to 13
+[TRACE] send right to 14
+[TRACE] send right to 14
+[TRACE] send right to 14
+[TRACE] send right to 14
+[TRACE] send right to 14
+[TRACE] send right to 15
+[TRACE] recieve right ok from 15
+[TRACE] send right to 16
+[TRACE] send right to 16
+[TRACE] send right to 16
+[TRACE] send right to 16
+[TRACE] send right to 16
+[TRACE] send right to 17
+[TRACE] send right to 17
+[TRACE] send right to 17
+[TRACE] send right to 17
+[TRACE] send right to 17
+[TRACE] send right to 18
+[TRACE] send right to 18
+[TRACE] send right to 18
+[TRACE] send right to 18
+[TRACE] send right to 18
+[TRACE] send right to 19
+[TRACE] send right to 19
+[TRACE] send right to 19
+[TRACE] send right to 19
+[TRACE] send right to 19
+[TRACE] send right to 20
+[TRACE] recieve right ok from 20
+[TRACE] send right to 21
+[TRACE] send right to 21
+[TRACE] send right to 21
+[TRACE] send right to 21
+[TRACE] send right to 21
+[TRACE] send right to 22
+[TRACE] send right to 22
+[TRACE] send right to 22
+[TRACE] send right to 22
+[TRACE] send right to 22
+[TRACE] send right to 23
+[TRACE] send right to 23
+[TRACE] send right to 23
+[TRACE] send right to 23
+[TRACE] send right to 23
+[TRACE] send right to 24
+[TRACE] send right to 24
+[TRACE] send right to 24
+[TRACE] send right to 24
+[TRACE] send right to 24
+[TRACE] send right to 25
+[TRACE] recieve right ok from 25
+[TRACE] send right to 26
+[TRACE] send right to 26
+[TRACE] send right to 26
+[TRACE] send right to 26
+[TRACE] send right to 26
+[TRACE] send right to 27
+[TRACE] send right to 27
+[TRACE] send right to 27
+[TRACE] send right to 27
+[TRACE] send right to 27
+[TRACE] send right to 28
+[TRACE] send right to 28
+[TRACE] send right to 28
+[TRACE] send right to 28
+[TRACE] send right to 28
+[TRACE] send right to 29
+[TRACE] send right to 29
+[TRACE] send right to 29
+[TRACE] send right to 29
+[TRACE] send right to 29
+[TRACE] send right to 30
+[TRACE] recieve right ok from 30
+[TRACE] send right to 31
+[TRACE] send right to 31
+[TRACE] send right to 31
+[TRACE] send right to 31
+[TRACE] send right to 31
+[TRACE] send right to 32
+[TRACE] send right to 32
+[TRACE] send right to 32
+[TRACE] send right to 32
+[TRACE] send right to 32
+[TRACE] send right to 33
+[TRACE] send right to 33
+[TRACE] send right to 33
+[TRACE] send right to 33
+[TRACE] send right to 33
+[TRACE] send right to 34
+[TRACE] send right to 34
+[TRACE] send right to 34
+[TRACE] send right to 34
+[TRACE] send right to 34
+[TRACE] send right to 35
+[TRACE] recieve right ok from 35
+[TRACE] send right to 36
+[TRACE] send right to 36
+[TRACE] send right to 36
+[TRACE] send right to 36
+[TRACE] send right to 36
+[TRACE] send right to 37
+[TRACE] send right to 37
+[TRACE] send right to 37
+[TRACE] send right to 37
+[TRACE] send right to 37
+[TRACE] send right to 38
+[TRACE] send right to 38
+[TRACE] send right to 38
+[TRACE] send right to 38
+[TRACE] send right to 38
+[TRACE] send right to 39
+[TRACE] send right to 39
+[TRACE] send right to 39
+[TRACE] send right to 39
+[TRACE] send right to 39
+[TRACE] send right to 40
+[TRACE] recieve right ok from 40
+[TRACE] send right to 41
+[TRACE] send right to 41
+[TRACE] send right to 41
+[TRACE] send right to 41
+[TRACE] send right to 41
+[TRACE] send right to 42
+[TRACE] send right to 42
+[TRACE] send right to 42
+[TRACE] send right to 42
+[TRACE] send right to 42
+[TRACE] send right to 43
+[TRACE] send right to 43
+[TRACE] send right to 43
+[TRACE] send right to 43
+[TRACE] send right to 43
+[TRACE] send right to 44
+[TRACE] send right to 44
+[TRACE] send right to 44
+[TRACE] send right to 44
+[TRACE] send right to 44
+[TRACE] send right to 45
+[TRACE] recieve right ok from 45
+[TRACE] send right to 46
+[TRACE] send right to 46
+[TRACE] send right to 46
+[TRACE] send right to 46
+[TRACE] send right to 46
+[TRACE] send right to 47
+[TRACE] send right to 47
+[TRACE] send right to 47
+[TRACE] send right to 47
+[TRACE] send right to 47
+[TRACE] send right to 48
+[TRACE] send right to 48
+[TRACE] send right to 48
+[TRACE] send right to 48
+[TRACE] send right to 48
+[TRACE] send right to 49
+[TRACE] send right to 49
+[TRACE] send right to 49
+[TRACE] send right to 49
+[TRACE] send right to 49
+[TRACE] send right to 50
+[TRACE] recieve right ok from 50
+[TRACE] send right to 51
+[TRACE] send right to 51
+[TRACE] send right to 51
+[TRACE] send right to 51
+[TRACE] send right to 51
+[TRACE] send right to 52
+[TRACE] send right to 52
+[TRACE] send right to 52
+[TRACE] send right to 52
+[TRACE] send right to 52
+[TRACE] send right to 53
+[TRACE] send right to 53
+[TRACE] send right to 53
+[TRACE] send right to 53
+[TRACE] send right to 53
+[TRACE] send right to 54
+[TRACE] send right to 54
+[TRACE] send right to 54
+[TRACE] send right to 54
+[TRACE] send right to 54
+[TRACE] send right to 55
+[TRACE] recieve right ok from 55
+[TRACE] send right to 56
+[TRACE] send right to 56
+[TRACE] send right to 56
+[TRACE] send right to 56
+[TRACE] send right to 56
+[TRACE] send right to 57
+[TRACE] send right to 57
+[TRACE] send right to 57
+[TRACE] send right to 57
+[TRACE] send right to 57
+[TRACE] send right to 58
+[TRACE] send right to 58
+[TRACE] send right to 58
+[TRACE] send right to 58
+[TRACE] send right to 58
+[TRACE] send right to 59
+[TRACE] send right to 59
+[TRACE] send right to 59
+[TRACE] send right to 59
+[TRACE] send right to 59
+[TRACE] send right to 60
+[TRACE] recieve right ok from 60
+[TRACE] send right to 61
+[TRACE] send right to 61
+[TRACE] send right to 61
+[TRACE] send right to 61
+[TRACE] send right to 61
+[TRACE] send right to 62
+[TRACE] send right to 62
+[TRACE] send right to 62
+[TRACE] send right to 62
+[TRACE] send right to 62
+[TRACE] send right to 63
+[TRACE] send right to 63
+[TRACE] send right to 63
+[TRACE] send right to 63
+[TRACE] send right to 63
+[TRACE] send right to 64
+[TRACE] send right to 64
+[TRACE] send right to 64
+[TRACE] send right to 64
+[TRACE] send right to 64
+[TRACE] send right to 65
+[TRACE] recieve right ok from 65
+[TRACE] send right to 66
+[TRACE] send right to 66
+[TRACE] send right to 66
+[TRACE] send right to 66
+[TRACE] send right to 66
+[TRACE] send right to 67
+[TRACE] send right to 67
+[TRACE] send right to 67
+[TRACE] send right to 67
+[TRACE] send right to 67
+[TRACE] send right to 68
+[TRACE] send right to 68
+[TRACE] send right to 68
+[TRACE] send right to 68
+[TRACE] send right to 68
+[TRACE] send right to 69
+[TRACE] send right to 69
+[TRACE] send right to 69
+[TRACE] send right to 69
+[TRACE] send right to 69
+[TRACE] send right to 70
+[TRACE] recieve right ok from 70
+[TRACE] send right to 71
+[TRACE] send right to 71
+[TRACE] send right to 71
+[TRACE] send right to 71
+[TRACE] send right to 71
+[TRACE] send right to 72
+[TRACE] send right to 72
+[TRACE] send right to 72
+[TRACE] send right to 72
+[TRACE] send right to 72
+[TRACE] send right to 73
+[TRACE] send right to 73
+[TRACE] send right to 73
+[TRACE] send right to 73
+[TRACE] send right to 73
+[TRACE] send right to 74
+[TRACE] send right to 74
+[TRACE] send right to 74
+[TRACE] send right to 74
+[TRACE] send right to 74
+[TRACE] send right to 75
+[TRACE] recieve right ok from 75
+[TRACE] send right to 76
+[TRACE] send right to 76
+[TRACE] send right to 76
+[TRACE] send right to 76
+[TRACE] send right to 76
+[TRACE] send right to 77
+[TRACE] send right to 77
+[TRACE] send right to 77
+[TRACE] send right to 77
+[TRACE] send right to 77
+[TRACE] send right to 78
+[TRACE] send right to 78
+[TRACE] send right to 78
+[TRACE] send right to 78
+[TRACE] send right to 78
+[TRACE] send right to 79
+[TRACE] send right to 79
+[TRACE] send right to 79
+[TRACE] send right to 79
+[TRACE] send right to 79
+[TRACE] send right to 80
+[TRACE] recieve right ok from 80
+[TRACE] send right to 81
+[TRACE] send right to 81
+[TRACE] send right to 81
+[TRACE] send right to 81
+[TRACE] send right to 81
+[TRACE] send right to 82
+[TRACE] send right to 82
+[TRACE] send right to 82
+[TRACE] send right to 82
+[TRACE] send right to 82
+[TRACE] send right to 83
+[TRACE] send right to 83
+[TRACE] send right to 83
+[TRACE] send right to 83
+[TRACE] send right to 83
+[TRACE] send right to 84
+[TRACE] send right to 84
+[TRACE] send right to 84
+[TRACE] send right to 84
+[TRACE] send right to 84
+[TRACE] send right to 85
+[TRACE] recieve right ok from 85
+[TRACE] send right to 86
+[TRACE] send right to 86
+[TRACE] send right to 86
+[TRACE] send right to 86
+[TRACE] send right to 86
+[TRACE] send right to 87
+[TRACE] send right to 87
+[TRACE] send right to 87
+[TRACE] send right to 87
+[TRACE] send right to 87
+[TRACE] send right to 88
+[TRACE] send right to 88
+[TRACE] send right to 88
+[TRACE] send right to 88
+[TRACE] send right to 88
+[TRACE] send right to 89
+[TRACE] send right to 89
+[TRACE] send right to 89
+[TRACE] send right to 89
+[TRACE] send right to 89
+[TRACE] send right to 90
+[TRACE] recieve right ok from 90
+[TRACE] send right to 91
+[TRACE] send right to 91
+[TRACE] send right to 91
+[TRACE] send right to 91
+[TRACE] send right to 91
+[TRACE] send right to 92
+[TRACE] send right to 92
+[TRACE] send right to 92
+[TRACE] send right to 92
+[TRACE] send right to 92
+[TRACE] send right to 93
+[TRACE] send right to 93
+[TRACE] send right to 93
+[TRACE] send right to 93
+[TRACE] send right to 93
+[TRACE] send right to 94
+[TRACE] send right to 94
+[TRACE] send right to 94
+[TRACE] send right to 94
+[TRACE] send right to 94
+[TRACE] send right to 95
+[TRACE] recieve right ok from 95
+[TRACE] send right to 96
+[TRACE] send right to 96
+[TRACE] send right to 96
+[TRACE] send right to 96
+[TRACE] send right to 96
+[TRACE] send right to 97
+[TRACE] send right to 97
+[TRACE] send right to 97
+[TRACE] send right to 97
+[TRACE] send right to 97
+[TRACE] send right to 98
+[TRACE] send right to 98
+[TRACE] send right to 98
+[TRACE] send right to 98
+[TRACE] send right to 98
+[TRACE] send right to 99
+[TRACE] send right to 99
+[TRACE] send right to 99
+[TRACE] send right to 99
+[TRACE] send right to 99
+[TRACE] send query to 70
+[TRACE] recieve query ok from 70
+[TRACE] send query to 90
+[TRACE] recieve query ok from 90
+[TRACE] send query to 10
+[TRACE] recieve query ok from 10
+[TRACE] send query to 80
+[TRACE] recieve query ok from 80
+[TRACE] send query to 5
+[TRACE] recieve query ok from 5
+[TRACE] send query to 75
+[TRACE] recieve query ok from 75
+[TRACE] send query to 20
+[TRACE] recieve query ok from 20
+[TRACE] send query to 40
+[TRACE] recieve query ok from 40
+[TRACE] send query to 45
+[TRACE] recieve query ok from 45
+[TRACE] send query to 55
+[TRACE] recieve query ok from 55
+[TRACE] send query to 60
+[TRACE] recieve query ok from 60
+[TRACE] send query to 95
+[TRACE] recieve query ok from 95
+[TRACE] send query to 85
+[TRACE] recieve query ok from 85
+[TRACE] send query to 50
+[TRACE] recieve query ok from 50
+[TRACE] send query to 30
+[TRACE] recieve query ok from 30
+[TRACE] send query to 65
+[TRACE] recieve query ok from 65
+[TRACE] send query to 25
+[TRACE] recieve query ok from 25
+[TRACE] send query to 35
+[TRACE] recieve query ok from 35
+[TRACE] send query to 15
+[TRACE] recieve query ok from 15
+[TRACE] Core::new()
+[TRACE] send right to 1
+[TRACE] recieve right ok from 1
+[TRACE] send right to 2
+[TRACE] send right to 2
+[TRACE] send right to 2
+[TRACE] send right to 2
+[TRACE] send right to 2
+[TRACE] send right to 3
+[TRACE] send right to 3
+[TRACE] send right to 3
+[TRACE] send right to 3
+[TRACE] send right to 3
+[TRACE] send right to 4
+[TRACE] send right to 4
+[TRACE] send right to 4
+[TRACE] send right to 4
+[TRACE] send right to 4
+[TRACE] send right to 5
+[TRACE] send right to 5
+[TRACE] send right to 5
+[TRACE] send right to 5
+[TRACE] send right to 5
+[TRACE] send right to 6
+[TRACE] send right to 6
+[TRACE] send right to 6
+[TRACE] send right to 6
+[TRACE] send right to 6
+[TRACE] send right to 7
+[TRACE] send right to 7
+[TRACE] send right to 7
+[TRACE] send right to 7
+[TRACE] send right to 7
+[TRACE] send right to 8
+[TRACE] send right to 8
+[TRACE] send right to 8
+[TRACE] send right to 8
+[TRACE] send right to 8
+[TRACE] send right to 9
+[TRACE] send right to 9
+[TRACE] send right to 9
+[TRACE] send right to 9
+[TRACE] send right to 9
+[TRACE] send right to 10
+[TRACE] send right to 10
+[TRACE] send right to 10
+[TRACE] send right to 10
+[TRACE] send right to 10
+[TRACE] send right to 11
+[TRACE] send right to 11
+[TRACE] send right to 11
+[TRACE] send right to 11
+[TRACE] recieve right err from 11
+[TRACE] send right to 12
+[TRACE] send right to 12
+[TRACE] send right to 12
+[TRACE] send right to 12
+[TRACE] send right to 12
+[TRACE] send right to 13
+[TRACE] send right to 13
+[TRACE] send right to 13
+[TRACE] send right to 13
+[TRACE] send right to 13
+[TRACE] send right to 14
+[TRACE] send right to 14
+[TRACE] send right to 14
+[TRACE] send right to 14
+[TRACE] send right to 14
+[TRACE] send right to 15
+[TRACE] send right to 15
+[TRACE] send right to 15
+[TRACE] send right to 15
+[TRACE] send right to 15
+[TRACE] send right to 16
+[TRACE] send right to 16
+[TRACE] send right to 16
+[TRACE] send right to 16
+[TRACE] send right to 16
+[TRACE] send right to 17
+[TRACE] send right to 17
+[TRACE] send right to 17
+[TRACE] send right to 17
+[TRACE] send right to 17
+[TRACE] send right to 18
+[TRACE] send right to 18
+[TRACE] send right to 18
+[TRACE] send right to 18
+[TRACE] send right to 18
+[TRACE] send right to 19
+[TRACE] send right to 19
+[TRACE] send right to 19
+[TRACE] send right to 19
+[TRACE] send right to 19
+[TRACE] send right to 20
+[TRACE] send right to 20
+[TRACE] send right to 20
+[TRACE] send right to 20
+[TRACE] send right to 20
+[TRACE] send right to 21
+[TRACE] send right to 21
+[TRACE] send right to 21
+[TRACE] send right to 21
+[TRACE] recieve right err from 21
+[TRACE] send right to 22
+[TRACE] send right to 22
+[TRACE] send right to 22
+[TRACE] send right to 22
+[TRACE] send right to 22
+[TRACE] send right to 23
+[TRACE] send right to 23
+[TRACE] send right to 23
+[TRACE] send right to 23
+[TRACE] send right to 23
+[TRACE] send right to 24
+[TRACE] send right to 24
+[TRACE] send right to 24
+[TRACE] send right to 24
+[TRACE] send right to 24
+[TRACE] send right to 25
+[TRACE] send right to 25
+[TRACE] send right to 25
+[TRACE] send right to 25
+[TRACE] send right to 25
+[TRACE] send right to 26
+[TRACE] send right to 26
+[TRACE] send right to 26
+[TRACE] send right to 26
+[TRACE] send right to 26
+[TRACE] send right to 27
+[TRACE] send right to 27
+[TRACE] send right to 27
+[TRACE] send right to 27
+[TRACE] send right to 27
+[TRACE] send right to 28
+[TRACE] send right to 28
+[TRACE] send right to 28
+[TRACE] send right to 28
+[TRACE] send right to 28
+[TRACE] send right to 29
+[TRACE] send right to 29
+[TRACE] send right to 29
+[TRACE] send right to 29
+[TRACE] send right to 29
+[TRACE] send right to 30
+[TRACE] send right to 30
+[TRACE] send right to 30
+[TRACE] send right to 30
+[TRACE] send right to 30
+[TRACE] send right to 31
+[TRACE] send right to 31
+[TRACE] send right to 31
+[TRACE] send right to 31
+[TRACE] recieve right err from 31
+[TRACE] send right to 32
+[TRACE] send right to 32
+[TRACE] send right to 32
+[TRACE] send right to 32
+[TRACE] send right to 32
+[TRACE] send right to 33
+[TRACE] send right to 33
+[TRACE] send right to 33
+[TRACE] send right to 33
+[TRACE] Core::new()
+[TRACE] send right to 1
+[TRACE] send right to 1
+[TRACE] send right to 1
+[TRACE] send right to 1
+[TRACE] send right to 1
+[TRACE] send right to 2
+[TRACE] send right to 2
+[TRACE] send right to 2
+[TRACE] send right to 2
+[TRACE] send right to 2
+[TRACE] send right to 3
+[TRACE] send right to 3
+[TRACE] send right to 3
+[TRACE] send right to 3
+[TRACE] send right to 3
+[TRACE] send right to 4
+[TRACE] send right to 4
+[TRACE] send right to 4
+[TRACE] send right to 4
+[TRACE] send right to 4
+[TRACE] send right to 5
+[TRACE] recieve right ok from 5
+[TRACE] send right to 6
+[TRACE] send right to 6
+[TRACE] send right to 6
+[TRACE] send right to 6
+[TRACE] send right to 6
+[TRACE] send right to 7
+[TRACE] send right to 7
+[TRACE] send right to 7
+[TRACE] send right to 7
+[TRACE] send right to 7
+[TRACE] send right to 8
+[TRACE] send right to 8
+[TRACE] send right to 8
+[TRACE] send right to 8
+[TRACE] send right to 8
+[TRACE] send right to 9
+[TRACE] send right to 9
+[TRACE] send right to 9
+[TRACE] send right to 9
+[TRACE] send right to 9
+[TRACE] send right to 10
+[TRACE] recieve right ok from 10
+[TRACE] send right to 11
+[TRACE] send right to 11
+[TRACE] send right to 11
+[TRACE] send right to 11
+[TRACE] send right to 11
+[TRACE] send right to 12
+[TRACE] send right to 12
+[TRACE] send right to 12
+[TRACE] send right to 12
+[TRACE] send right to 12
+[TRACE] send right to 13
+[TRACE] send right to 13
+[TRACE] send right to 13
+[TRACE] send right to 13
+[TRACE] send right to 13
+[TRACE] send right to 14
+[TRACE] send right to 14
+[TRACE] send right to 14
+[TRACE] send right to 14
+[TRACE] send right to 14
+[TRACE] send right to 15
+[TRACE] recieve right ok from 15
+[TRACE] send right to 16
+[TRACE] send right to 16
+[TRACE] send right to 16
+[TRACE] send right to 16
+[TRACE] send right to 16
+[TRACE] send right to 17
+[TRACE] send right to 17
+[TRACE] send right to 17
+[TRACE] send right to 17
+[TRACE] send right to 17
+[TRACE] send right to 18
+[TRACE] send right to 18
+[TRACE] send right to 18
+[TRACE] send right to 18
+[TRACE] send right to 18
+[TRACE] send right to 19
+[TRACE] send right to 19
+[TRACE] send right to 19
+[TRACE] send right to 19
+[TRACE] send right to 19
+[TRACE] send right to 20
+[TRACE] recieve right ok from 20
+[TRACE] send right to 21
+[TRACE] send right to 21
+[TRACE] send right to 21
+[TRACE] send right to 21
+[TRACE] send right to 21
+[TRACE] send right to 22
+[TRACE] send right to 22
+[TRACE] send right to 22
+[TRACE] send right to 22
+[TRACE] send right to 22
+[TRACE] send right to 23
+[TRACE] send right to 23
+[TRACE] send right to 23
+[TRACE] send right to 23
+[TRACE] send right to 23
+[TRACE] send right to 24
+[TRACE] send right to 24
+[TRACE] send right to 24
+[TRACE] send right to 24
+[TRACE] send right to 24
+[TRACE] send right to 25
+[TRACE] recieve right ok from 25
+[TRACE] send right to 26
+[TRACE] send right to 26
+[TRACE] send right to 26
+[TRACE] send right to 26
+[TRACE] send right to 26
+[TRACE] send right to 27
+[TRACE] send right to 27
+[TRACE] send right to 27
+[TRACE] send right to 27
+[TRACE] send right to 27
+[TRACE] send right to 28
+[TRACE] send right to 28
+[TRACE] send right to 28
+[TRACE] send right to 28
+[TRACE] send right to 28
+[TRACE] send right to 29
+[TRACE] send right to 29
+[TRACE] send right to 29
+[TRACE] send right to 29
+[TRACE] send right to 29
+[TRACE] send right to 30
+[TRACE] recieve right ok from 30
+[TRACE] send right to 31
+[TRACE] send right to 31
+[TRACE] send right to 31
+[TRACE] send right to 31
+[TRACE] send right to 31
+[TRACE] send right to 32
+[TRACE] send right to 32
+[TRACE] send right to 32
+[TRACE] send right to 32
+[TRACE] send right to 32
+[TRACE] send right to 33
+[TRACE] send right to 33
+[TRACE] send right to 33
+[TRACE] send right to 33
+[TRACE] send right to 33
+[TRACE] send right to 34
+[TRACE] send right to 34
+[TRACE] send right to 34
+[TRACE] send right to 34
+[TRACE] send right to 34
+[TRACE] send right to 35
+[TRACE] recieve right ok from 35
+[TRACE] send right to 36
+[TRACE] send right to 36
+[TRACE] send right to 36
+[TRACE] send right to 36
+[TRACE] send right to 36
+[TRACE] send right to 37
+[TRACE] send right to 37
+[TRACE] send right to 37
+[TRACE] send right to 37
+[TRACE] send right to 37
+[TRACE] send right to 38
+[TRACE] send right to 38
+[TRACE] send right to 38
+[TRACE] send right to 38
+[TRACE] send right to 38
+[TRACE] send right to 39
+[TRACE] send right to 39
+[TRACE] send right to 39
+[TRACE] send right to 39
+[TRACE] send right to 39
+[TRACE] send right to 40
+[TRACE] recieve right ok from 40
+[TRACE] send right to 41
+[TRACE] send right to 41
+[TRACE] send right to 41
+[TRACE] send right to 41
+[TRACE] send right to 41
+[TRACE] send right to 42
+[TRACE] send right to 42
+[TRACE] send right to 42
+[TRACE] send right to 42
+[TRACE] send right to 42
+[TRACE] send right to 43
+[TRACE] send right to 43
+[TRACE] send right to 43
+[TRACE] send right to 43
+[TRACE] send right to 43
+[TRACE] send right to 44
+[TRACE] send right to 44
+[TRACE] send right to 44
+[TRACE] send right to 44
+[TRACE] send right to 44
+[TRACE] send right to 45
+[TRACE] recieve right ok from 45
+[TRACE] send right to 46
+[TRACE] send right to 46
+[TRACE] send right to 46
+[TRACE] send right to 46
+[TRACE] send right to 46
+[TRACE] send right to 47
+[TRACE] send right to 47
+[TRACE] send right to 47
+[TRACE] send right to 47
+[TRACE] send right to 47
+[TRACE] send right to 48
+[TRACE] send right to 48
+[TRACE] send right to 48
+[TRACE] send right to 48
+[TRACE] send right to 48
+[TRACE] send right to 49
+[TRACE] send right to 49
+[TRACE] send right to 49
+[TRACE] send right to 49
+[TRACE] send right to 49
+[TRACE] send right to 50
+[TRACE] recieve right ok from 50
+[TRACE] send right to 51
+[TRACE] send right to 51
+[TRACE] send right to 51
+[TRACE] send right to 51
+[TRACE] send right to 51
+[TRACE] send right to 52
+[TRACE] send right to 52
+[TRACE] send right to 52
+[TRACE] send right to 52
+[TRACE] send right to 52
+[TRACE] send right to 53
+[TRACE] send right to 53
+[TRACE] send right to 53
+[TRACE] send right to 53
+[TRACE] send right to 53
+[TRACE] send right to 54
+[TRACE] send right to 54
+[TRACE] send right to 54
+[TRACE] send right to 54
+[TRACE] send right to 54
+[TRACE] send right to 55
+[TRACE] recieve right ok from 55
+[TRACE] send right to 56
+[TRACE] send right to 56
+[TRACE] send right to 56
+[TRACE] send right to 56
+[TRACE] send right to 56
+[TRACE] send right to 57
+[TRACE] send right to 57
+[TRACE] send right to 57
+[TRACE] send right to 57
+[TRACE] send right to 57
+[TRACE] send right to 58
+[TRACE] send right to 58
+[TRACE] send right to 58
+[TRACE] send right to 58
+[TRACE] send right to 58
+[TRACE] send right to 59
+[TRACE] send right to 59
+[TRACE] send right to 59
+[TRACE] send right to 59
+[TRACE] send right to 59
+[TRACE] send right to 60
+[TRACE] recieve right ok from 60
+[TRACE] send right to 61
+[TRACE] send right to 61
+[TRACE] send right to 61
+[TRACE] send right to 61
+[TRACE] send right to 61
+[TRACE] send right to 62
+[TRACE] send right to 62
+[TRACE] send right to 62
+[TRACE] send right to 62
+[TRACE] send right to 62
+[TRACE] send right to 63
+[TRACE] send right to 63
+[TRACE] send right to 63
+[TRACE] send right to 63
+[TRACE] send right to 63
+[TRACE] send right to 64
+[TRACE] send right to 64
+[TRACE] send right to 64
+[TRACE] send right to 64
+[TRACE] send right to 64
+[TRACE] send right to 65
+[TRACE] recieve right ok from 65
+[TRACE] send right to 66
+[TRACE] send right to 66
+[TRACE] send right to 66
+[TRACE] send right to 66
+[TRACE] send right to 66
+[TRACE] send right to 67
+[TRACE] send right to 67
+[TRACE] send right to 67
+[TRACE] send right to 67
+[TRACE] send right to 67
+[TRACE] send right to 68
+[TRACE] send right to 68
+[TRACE] send right to 68
+[TRACE] send right to 68
+[TRACE] send right to 68
+[TRACE] send right to 69
+[TRACE] send right to 69
+[TRACE] send right to 69
+[TRACE] send right to 69
+[TRACE] send right to 69
+[TRACE] send right to 70
+[TRACE] recieve right ok from 70
+[TRACE] send right to 71
+[TRACE] send right to 71
+[TRACE] send right to 71
+[TRACE] send right to 71
+[TRACE] send right to 71
+[TRACE] send right to 72
+[TRACE] send right to 72
+[TRACE] send right to 72
+[TRACE] send right to 72
+[TRACE] send right to 72
+[TRACE] send right to 73
+[TRACE] send right to 73
+[TRACE] send right to 73
+[TRACE] send right to 73
+[TRACE] send right to 73
+[TRACE] send right to 74
+[TRACE] send right to 74
+[TRACE] send right to 74
+[TRACE] send right to 74
+[TRACE] send right to 74
+[TRACE] send right to 75
+[TRACE] recieve right ok from 75
+[TRACE] send right to 76
+[TRACE] send right to 76
+[TRACE] send right to 76
+[TRACE] send right to 76
+[TRACE] send right to 76
+[TRACE] send right to 77
+[TRACE] send right to 77
+[TRACE] send right to 77
+[TRACE] send right to 77
+[TRACE] send right to 77
+[TRACE] send right to 78
+[TRACE] send right to 78
+[TRACE] send right to 78
+[TRACE] send right to 78
+[TRACE] send right to 78
+[TRACE] send right to 79
+[TRACE] send right to 79
+[TRACE] send right to 79
+[TRACE] send right to 79
+[TRACE] send right to 79
+[TRACE] send right to 80
+[TRACE] recieve right ok from 80
+[TRACE] send right to 81
+[TRACE] send right to 81
+[TRACE] send right to 81
+[TRACE] send right to 81
+[TRACE] send right to 81
+[TRACE] send right to 82
+[TRACE] send right to 82
+[TRACE] send right to 82
+[TRACE] send right to 82
+[TRACE] send right to 82
+[TRACE] send right to 83
+[TRACE] send right to 83
+[TRACE] send right to 83
+[TRACE] send right to 83
+[TRACE] send right to 83
+[TRACE] send right to 84
+[TRACE] send right to 84
+[TRACE] send right to 84
+[TRACE] send right to 84
+[TRACE] send right to 84
+[TRACE] send right to 85
+[TRACE] recieve right ok from 85
+[TRACE] send right to 86
+[TRACE] send right to 86
+[TRACE] send right to 86
+[TRACE] send right to 86
+[TRACE] send right to 86
+[TRACE] send right to 87
+[TRACE] send right to 87
+[TRACE] send right to 87
+[TRACE] send right to 87
+[TRACE] send right to 87
+[TRACE] send right to 88
+[TRACE] send right to 88
+[TRACE] send right to 88
+[TRACE] send right to 88
+[TRACE] send right to 88
+[TRACE] send right to 89
+[TRACE] send right to 89
+[TRACE] send right to 89
+[TRACE] send right to 89
+[TRACE] send right to 89
+[TRACE] send right to 90
+[TRACE] recieve right ok from 90
+[TRACE] send right to 91
+[TRACE] send right to 91
+[TRACE] send right to 91
+[TRACE] send right to 91
+[TRACE] send right to 91
+[TRACE] send right to 92
+[TRACE] send right to 92
+[TRACE] send right to 92
+[TRACE] send right to 92
+[TRACE] send right to 92
+[TRACE] send right to 93
+[TRACE] send right to 93
+[TRACE] send right to 93
+[TRACE] send right to 93
+[TRACE] send right to 93
+[TRACE] send right to 94
+[TRACE] send right to 94
+[TRACE] send right to 94
+[TRACE] send right to 94
+[TRACE] send right to 94
+[TRACE] send right to 95
+[TRACE] recieve right ok from 95
+[TRACE] send right to 96
+[TRACE] send right to 96
+[TRACE] send right to 96
+[TRACE] send right to 96
+[TRACE] send right to 96
+[TRACE] send right to 97
+[TRACE] send right to 97
+[TRACE] send right to 97
+[TRACE] send right to 97
+[TRACE] send right to 97
+[TRACE] send right to 98
+[TRACE] send right to 98
+[TRACE] send right to 98
+[TRACE] send right to 98
+[TRACE] send right to 98
+[TRACE] send right to 99
+[TRACE] send right to 99
+[TRACE] send right to 99
+[TRACE] send right to 99
+[TRACE] send right to 99
+[TRACE] send query to 60
+[TRACE] recieve query ok from 60
+[TRACE] send query to 5
+[TRACE] recieve query ok from 5
+[TRACE] send query to 25
+[TRACE] recieve query ok from 25
+[TRACE] send query to 20
+[TRACE] recieve query ok from 20
+[TRACE] send query to 35
+[TRACE] recieve query ok from 35
+[TRACE] send query to 30
+[TRACE] recieve query ok from 30
+[TRACE] send query to 50
+[TRACE] recieve query ok from 50
+[TRACE] send query to 90
+[TRACE] recieve query ok from 90
+[TRACE] send query to 80
+[TRACE] recieve query ok from 80
+[TRACE] send query to 45
+[TRACE] recieve query ok from 45
+[TRACE] send query to 85
+[TRACE] recieve query ok from 85
+[TRACE] send query to 15
+[TRACE] recieve query ok from 15
+[TRACE] send query to 55
+[TRACE] recieve query ok from 55
+[TRACE] send query to 75
+[TRACE] recieve query ok from 75
+[TRACE] send query to 95
+[TRACE] recieve query ok from 95
+[TRACE] send query to 40
+[TRACE] recieve query ok from 40
+[TRACE] send query to 65
+[TRACE] recieve query ok from 65
+[TRACE] send query to 70
+[TRACE] recieve query ok from 70
+[TRACE] send query to 10
+[TRACE] recieve query ok from 10
