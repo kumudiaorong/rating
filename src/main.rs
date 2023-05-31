@@ -15,7 +15,6 @@ use rating::ui;
 //   }
 use std::env;
 use std::io::{self, Write};
-use std::os::fd::{AsFd, BorrowedFd};
 fn main() {
     rating::logger::init(
         std::fs::File::options()
