@@ -1,4 +1,4 @@
-use crate::{config, logger, msg};
+use crate::{config, logger, msg, msg::rate_list};
 use iced::widget::{self, column, row, Column};
 use iced::{
     alignment, executor, window, Application, Command, Element, Length, Subscription, Theme,
@@ -27,7 +27,7 @@ pub struct App {
     receiver: mpsc::Receiver<Vec<u8>>,
     choosed: Option<String>,
     available_ports: Vec<String>,
-    ratelist: crate::msg::RateList,
+    ratelist: msg::RateList,
     state: String,
     config: config::Config,
     is_open: bool,
@@ -92,7 +92,6 @@ impl App {
         }
     }
 }
-use crate::msg::rate_list;
 impl Application for App {
     type Executor = executor::Default;
     type Message = AppMessage;
@@ -111,7 +110,7 @@ impl Application for App {
                 config: config::Config::default(),
                 is_open: false,
             },
-            window::resize(750, 240),
+            window::resize(750, 245),
         )
     }
 
@@ -194,10 +193,15 @@ impl Application for App {
         let allokscoreslen = allokscores.clone().count();
         let sumscore = allokscores.clone().sum::<i32>();
         let display = column![
-            creat_info("sum", allokscores.clone().sum::<i32>()),
-            creat_info("max", allokscores.clone().max().unwrap_or(-1)),
-            creat_info("min", allokscores.clone().min().unwrap_or(-1)),
-            creat_info("avg", sumscore / allokscoreslen.max(1) as i32),
+            add_boder(
+                column![
+                    creat_info("sum", allokscores.clone().sum::<i32>()),
+                    creat_info("max", allokscores.clone().max().unwrap_or(-1)),
+                    creat_info("min", allokscores.clone().min().unwrap_or(-1)),
+                    creat_info("avg", sumscore / allokscoreslen.max(1) as i32),
+                ]
+                .spacing(5)
+            ),
             row![
                 widget::button(std_text(if self.is_open { "close" } else { "open" }))
                     .on_press(AppMessage::OpenSerial),
@@ -244,7 +248,7 @@ impl Application for App {
                     .on_input(AppMessage::CfgTryCnt),
             ]
             .spacing(5),
-            widget::vertical_space(5),
+            widget::vertical_space(15),
             row![
                 widget::button(std_text("save")).on_press(AppMessage::Save),
                 widget::button(std_text("apply")).on_press(AppMessage::Apply),
