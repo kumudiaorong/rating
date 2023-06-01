@@ -1,7 +1,8 @@
-use crate::config;
-use crate::logger;
+use crate::{config, logger, msg};
+use msg::{msg_header::MsgType, rate_list, MsgHeader};
+use prost::Message;
 use std::collections::hash_map;
-
+use std::sync::mpsc;
 pub enum State {
     Prepare,
     Ok(Box<dyn serialport::SerialPort>),
@@ -10,27 +11,16 @@ pub enum DevState {
     Right,
     Rate(i32),
 }
-use msg::msg_header::MsgType;
-use std::sync::mpsc;
-pub fn available_ports() -> Vec<String> {
-    if let Ok(v) = serialport::available_ports() {
-        return v.iter().map(|p| p.port_name.clone()).collect();
-    }
-    Vec::new()
-}
 enum Pollfor {
     Right,
     Query,
 }
-use crate::msg;
-use crate::msg::rate_list;
-use prost::Message;
 pub struct Core {
     sender: mpsc::Sender<Vec<u8>>,
     receiver: mpsc::Receiver<Vec<u8>>,
     config: config::Config,
     state: State,
-    pub ratidx: hash_map::HashMap<i32, DevState>,
+    ratidx: hash_map::HashMap<i32, DevState>,
 }
 impl Core {
     pub fn new(sender: mpsc::Sender<Vec<u8>>, receiver: mpsc::Receiver<Vec<u8>>) -> Self {
@@ -63,7 +53,7 @@ impl Core {
         match self.state {
             State::Ok(ref mut port) => {
                 for i in match &phase {
-                    Pollfor::Right => (1..(self.config.maxdev + 1))
+                    Pollfor::Right => (1..(self.config.max_dev + 1))
                         .filter(|i| match self.ratidx.get(i) {
                             Some(_) => false,
                             _ => true,
@@ -103,7 +93,7 @@ impl Core {
                         );
                     };
 
-                    for _ in 0..self.config.trycnt {
+                    for _ in 0..self.config.try_cnt {
                         match port.write(&check) {
                             Ok(5) => {
                                 trace("send", &phase, true);
@@ -151,25 +141,7 @@ impl Core {
             _ => return,
         }
     }
-    pub fn right(&mut self) {
-        self.poll(Pollfor::Right);
-    }
-    pub fn query(&mut self) {
-        self.poll(Pollfor::Query);
-    }
-    pub fn reset(&mut self) {
-        match self.state {
-            State::Ok(ref mut port) => {
-                for i in self.ratidx.iter() {
-                    // let v = [0x5a as u8, 0x00, 0x01, 0x00, 0x5b];
-                    port.write(&[0x5a as u8, 0x00, 0x01, 0x00, 0x5b]);
-                }
-            }
-            _ => (),
-        }
-    }
     pub fn run(&mut self) {
-        use msg::MsgHeader;
         logger::trace("Core::run()");
         loop {
             if let Ok(rcev) = self.receiver.recv() {
@@ -182,9 +154,15 @@ impl Core {
                                 }
                             }
                         }
-                        MsgType::Right => self.right(),
+                        MsgType::Close => match self.state {
+                            State::Ok(_) => {
+                                self.state = State::Prepare;
+                            }
+                            _ => (),
+                        },
+                        MsgType::Right => self.poll(Pollfor::Right),
                         MsgType::Query => {
-                            self.query();
+                            self.poll(Pollfor::Query);
                             if let Ok(_) = self
                                 .sender
                                 .send(MsgHeader::new(MsgType::Query).encode_to_vec())
@@ -211,10 +189,24 @@ impl Core {
                                     )
                                     .encode_to_vec(),
                                 );
-                                self.reset();
                             }
                         }
-                        _ => (),
+                        MsgType::Reset => match self.state {
+                            State::Ok(ref mut port) => {
+                                for _ in 0..self.config.try_cnt {
+                                    if let Err(_) =
+                                        port.write(&[0x5a as u8, 0x00, 0x01, 0x00, 0x5b])
+                                    {
+                                        logger::warn("Failed to reset serial port");
+                                    }
+                                }
+                                self.ratidx.clear();
+                            }
+                            _ => (),
+                        },
+                        MsgType::Reload => {
+                            self.config.reload();
+                        }
                     }
                 }
             }

@@ -36,6 +36,20 @@ pub fn init(to: impl std::io::Write + 'static) {
         LOGGER = Some(Logger { to: Box::new(to) });
     }
 }
+pub fn with_file<'a>(name: &str) {
+    // Box::new(to);
+    unsafe {
+        LOGGER = Some(Logger {
+            to: Box::new(
+                std::fs::File::options()
+                    .create(true)
+                    .append(true)
+                    .open(name)
+                    .unwrap(),
+            ),
+        });
+    }
+}
 pub fn set_level(level: Level) {
     unsafe {
         LEVEL = level;

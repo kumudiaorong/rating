@@ -1,4 +1,4 @@
 baud_rate = 9600
-timeout = 30
-maxdev = 99
-trycnt = 10
+timeout = 20
+max_dev = 99
+try_cnt = 4

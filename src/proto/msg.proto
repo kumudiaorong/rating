@@ -4,10 +4,11 @@ package msg;
 message MsgHeader {
   enum MsgType {
     OPEN = 0;
-    RIGHT = 1;
-    QUERY = 2;
-    GETCFG = 3;
-    SAVECFG = 4;
+    CLOSE = 1;
+    RIGHT = 2;
+    QUERY = 3;
+    RESET = 4;
+    RELOAD = 5;
   }
   MsgType tp = 1;
 }
