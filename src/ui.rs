@@ -100,7 +100,7 @@ impl Application for App {
         Command::none()
     }
     fn subscription(&self) -> Subscription<AppMessage> {
-        iced::time::every(std::time::Duration::from_millis(10)).map(|_| AppMessage::Tick)
+        iced::time::every(std::time::Duration::from_millis(100)).map(|_| AppMessage::Tick)
     }
     fn view(&self) -> Element<AppMessage> {
         let available_list = container(
