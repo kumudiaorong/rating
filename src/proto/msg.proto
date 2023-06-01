@@ -5,10 +5,11 @@ message MsgHeader {
   enum MsgType {
     OPEN = 0;
     CLOSE = 1;
-    RIGHT = 2;
-    QUERY = 3;
-    RESET = 4;
-    RELOAD = 5;
+    RESET = 2;
+    RELOAD = 3;
+    RIGHT = 4;
+    QUERY = 5;
+    Next = 6;
   }
   MsgType tp = 1;
 }

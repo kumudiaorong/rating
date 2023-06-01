@@ -48,7 +48,6 @@ impl Core {
             }
         }
     }
-    pub fn config(&mut self) {}
     fn poll(&mut self, phase: Pollfor) {
         match self.state {
             State::Ok(ref mut port) => {
@@ -190,6 +189,11 @@ impl Core {
                                     .encode_to_vec(),
                                 );
                             }
+                        }
+                        MsgType::Next => {
+                            self.ratidx.iter_mut().for_each(|(_, s)| {
+                                *s = DevState::Right;
+                            });
                         }
                         MsgType::Reset => match self.state {
                             State::Ok(ref mut port) => {

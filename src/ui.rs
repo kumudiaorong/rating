@@ -28,7 +28,6 @@ pub struct App {
     choosed: Option<String>,
     available_ports: Vec<String>,
     ratelist: msg::RateList,
-    state: String,
     config: config::Config,
     is_open: bool,
 }
@@ -37,7 +36,6 @@ impl App {
         match self.sender.send(msg.encode_to_vec()) {
             Ok(_) => true,
             Err(_) => {
-                self.state = err.to_string();
                 logger::warn(err);
                 false
             }
@@ -53,10 +51,7 @@ impl App {
         )
         .then(|| {
             self.send_header(MsgType::Right, "send right request failed")
-                .then(|| {
-                    self.send_header(MsgType::Query, "send query request failed")
-                        .then(|| self.state = String::from("send query request success"))
-                })
+                .then(|| self.send_header(MsgType::Query, "send query request failed"))
         });
     }
     fn open(&mut self) {
@@ -82,7 +77,6 @@ impl App {
                             if let Ok(rl) = msg::RateList::decode(rcev.as_slice()) {
                                 self.ratelist = rl;
                                 self.ratelist.rates.sort_by(|l, r| l.addr.cmp(&r.addr));
-                                self.state = String::from("receive query response success")
                             }
                         }
                     }
@@ -106,7 +100,6 @@ impl Application for App {
                 choosed: None,
                 available_ports: config::available_ports(),
                 ratelist: msg::RateList::default(),
-                state: String::from("Ok"),
                 config: config::Config::default(),
                 is_open: false,
             },
@@ -129,8 +122,9 @@ impl Application for App {
                 self.send_header(MsgType::Right, "send right request failed");
             }
             AppMessage::ReQuery => {
-                self.send_header(MsgType::Query, "send query request failed")
-                    .then(|| self.state = String::from("send query request success"));
+                self.ratelist.clear();
+                self.send_header(MsgType::Next, "send query request failed");
+                self.send_header(MsgType::Query, "send query request failed");
             }
             AppMessage::Save => self.config.save(),
             AppMessage::Apply => {
