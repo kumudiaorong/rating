@@ -12,7 +12,6 @@ impl Config {
     pub fn new() -> Self {
         if let Ok(str) = fs::read_to_string("config.toml") {
             if let Ok(config) = toml::from_str(&str) {
-                println!("{:#?}", config);
                 return config;
             }
         }

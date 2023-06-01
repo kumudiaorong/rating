@@ -1,25 +1,28 @@
 syntax = "proto3";
 package msg;
 
-message MsgType {
-  enum Type {
-    CHECK = 0;
-    ERROR = 1;
-    // AVAILABLE_PORTS = 1;
-    OPEN = 3;
-    RIGHT = 4;
-    QUERY = 5;
-    GETCFG = 6;
-    SAVECFG = 7;
+message MsgHeader {
+  enum MsgType {
+    OPEN = 0;
+    RIGHT = 1;
+    QUERY = 2;
+    GETCFG = 3;
+    SAVECFG = 4;
   }
-  Type type = 1;
+  MsgType tp = 1;
 }
 message AvailablePorts { repeated string ports = 1; }
 message Port { string path = 1; }
 message RateList {
+  enum State {
+    READY = 0;
+    ERROR = 1;
+    OK = 2;
+  }
   message Rate {
-    int32 idx = 1;
-    string state = 2;
+    int32 addr = 1;
+    int32 score = 2;
+    State state = 3;
   }
   repeated Rate rates = 1;
 }

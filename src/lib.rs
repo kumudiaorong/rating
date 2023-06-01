@@ -7,19 +7,23 @@ pub mod ui;
 pub mod msg {
 
     include!(concat!(env!("OUT_DIR"), "/msg.rs"));
-    impl MsgType {
-        pub fn new(tp: msg_type::Type) -> Self {
-            Self { r#type: tp as i32 }
+    impl MsgHeader {
+        pub fn new(tp: msg_header::MsgType) -> Self {
+            Self { tp: tp as i32 }
         }
     }
-    impl From<msg_type::Type> for MsgType {
-        fn from(tp: msg_type::Type) -> Self {
+    impl From<msg_header::MsgType> for MsgHeader {
+        fn from(tp: msg_header::MsgType) -> Self {
             Self::new(tp)
         }
     }
     impl rate_list::Rate {
-        pub fn new(idx: i32, state: String) -> Self {
-            Self { idx, state }
+        pub fn new(addr: i32, score: i32, state: rate_list::State) -> Self {
+            Self {
+                addr,
+                score,
+                state: state as i32,
+            }
         }
     }
     impl Port {

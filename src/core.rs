@@ -1,9 +1,6 @@
 use crate::config;
 use crate::logger;
-use std::{
-    collections::{hash_map, hash_set},
-    fs,
-};
+use std::collections::hash_map;
 
 pub enum State {
     Prepare,
@@ -13,7 +10,7 @@ pub enum DevState {
     Right,
     Rate(i32),
 }
-use msg::msg_type::Type;
+use msg::msg_header::MsgType;
 use std::sync::mpsc;
 pub fn available_ports() -> Vec<String> {
     if let Ok(v) = serialport::available_ports() {
@@ -26,8 +23,8 @@ enum Pollfor {
     Query,
 }
 use crate::msg;
+use crate::msg::rate_list;
 use prost::Message;
-
 pub struct Core {
     sender: mpsc::Sender<Vec<u8>>,
     receiver: mpsc::Receiver<Vec<u8>>,
@@ -46,24 +43,19 @@ impl Core {
             ratidx: hash_map::HashMap::new(),
         }
     }
-    pub fn open<'a>(&mut self, path: impl Into<std::borrow::Cow<'a, str>>) -> Result<(), ()> {
-        match self.state {
-            State::Prepare => {
-                match serialport::new(path, self.config.baud_rate)
-                    .timeout(std::time::Duration::from_millis(self.config.timeout as u64))
-                    .open()
-                {
-                    Ok(port) => {
-                        self.state = State::Ok(port);
-                        Ok(())
-                    }
-                    Err(_) => {
-                        logger::warn("Failed to open serial port");
-                        Err(())
-                    }
-                }
+    pub fn open<'a>(&mut self, path: impl Into<std::borrow::Cow<'a, str>>) -> bool {
+        match serialport::new(path, self.config.baud_rate)
+            .timeout(std::time::Duration::from_millis(self.config.timeout as u64))
+            .open()
+        {
+            Ok(port) => {
+                self.state = State::Ok(port);
+                true
             }
-            _ => Err(()),
+            Err(_) => {
+                logger::warn("Failed to open serial port");
+                false
+            }
         }
     }
     pub fn config(&mut self) {}
@@ -128,6 +120,7 @@ impl Core {
                                             if buf[0] == 0x5A
                                                 && buf[1] == i as u8
                                                 && buf[2] == 0x03
+                                                && buf[3] != 0x6f
                                                 && buf[4]
                                                     == (buf
                                                         .iter()
@@ -164,66 +157,66 @@ impl Core {
     pub fn query(&mut self) {
         self.poll(Pollfor::Query);
     }
+    pub fn reset(&mut self) {
+        match self.state {
+            State::Ok(ref mut port) => {
+                for i in self.ratidx.iter() {
+                    // let v = [0x5a as u8, 0x00, 0x01, 0x00, 0x5b];
+                    port.write(&[0x5a as u8, 0x00, 0x01, 0x00, 0x5b]);
+                }
+            }
+            _ => (),
+        }
+    }
     pub fn run(&mut self) {
-        use msg::MsgType;
+        use msg::MsgHeader;
         logger::trace("Core::run()");
-        let mut ok = true;
         loop {
-            match self.receiver.recv() {
-                Ok(rcev) => match MsgType::decode(rcev.as_slice()) {
-                    Ok(tp) => match tp.r#type() {
-                        Type::Check => {
-                            ok = true;
-                        }
-                        other => match other {
-                            Type::Open => match self.receiver.recv() {
-                                Ok(path) => {
-                                    if let Ok(port) = msg::Port::decode(path.as_slice()) {
-                                        self.open(port.path);
-                                    }
-                                    self.sender
-                                        .send(MsgType::new(Type::Error).encode_to_vec())
-                                        .unwrap();
+            if let Ok(rcev) = self.receiver.recv() {
+                if let Ok(h) = MsgHeader::decode(rcev.as_slice()) {
+                    match h.tp() {
+                        MsgType::Open => {
+                            if let Ok(path) = self.receiver.recv() {
+                                if let Ok(port) = msg::Port::decode(path.as_slice()) {
+                                    self.open(port.path);
                                 }
-                                Err(_) => self
-                                    .sender
-                                    .send(MsgType::new(Type::Error).encode_to_vec())
-                                    .unwrap(),
-                            },
-                            Type::Right => {
-                                self.right();
                             }
-                            Type::Query => {
-                                self.query();
-                                self.sender
-                                    .send(MsgType::new(Type::Query).encode_to_vec())
-                                    .unwrap();
-                                self.sender
-                                    .send(
-                                        msg::RateList::new(
-                                            self.ratidx
-                                                .iter()
-                                                .map(|d| {
-                                                    msg::rate_list::Rate::new(
-                                                        d.0.clone(),
-                                                        match d.1 {
-                                                            DevState::Rate(r) => r.to_string(),
-                                                            _ => "ready".to_string(),
-                                                        },
-                                                    )
-                                                })
-                                                .collect(),
-                                        )
-                                        .encode_to_vec(),
+                        }
+                        MsgType::Right => self.right(),
+                        MsgType::Query => {
+                            self.query();
+                            if let Ok(_) = self
+                                .sender
+                                .send(MsgHeader::new(MsgType::Query).encode_to_vec())
+                            {
+                                let _ = self.sender.send(
+                                    msg::RateList::new(
+                                        self.ratidx
+                                            .iter()
+                                            .map(|d| {
+                                                let (score, state) = match d.1 {
+                                                    DevState::Rate(r) if r > &100 => {
+                                                        (r, rate_list::State::Error)
+                                                    }
+                                                    DevState::Rate(r) => (r, rate_list::State::Ok),
+                                                    _ => (&-1, rate_list::State::Ready),
+                                                };
+                                                msg::rate_list::Rate::new(
+                                                    d.0.clone(),
+                                                    *score,
+                                                    state,
+                                                )
+                                            })
+                                            .collect(),
                                     )
-                                    .unwrap();
+                                    .encode_to_vec(),
+                                );
+                                self.reset();
                             }
-                            _ => (),
-                        },
-                    },
-                    Err(_) => ok = false,
-                },
-                Err(_) => (),
+                        }
+                        _ => (),
+                    }
+                }
             }
         }
     }
