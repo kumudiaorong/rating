@@ -26,9 +26,15 @@ impl Config {
         }
     }
     pub fn save(&self) {
-        if let Ok(str) = toml::to_string(&self) {
-            if let Ok(_) = fs::write("config.toml", str) {
-                logger::info("Config saved");
+        if let Ok(_) = fs::File::options()
+            .create(true)
+            .write(true)
+            .open("config.toml")
+        {
+            if let Ok(str) = toml::to_string(&self) {
+                if let Ok(_) = fs::write("config.toml", str) {
+                    logger::info("Config saved");
+                }
             }
         }
     }
