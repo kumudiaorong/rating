@@ -3,7 +3,7 @@ use msg::{msg_header::MsgType, rate_list, MsgHeader};
 use prost::Message;
 use std::collections::hash_map;
 use std::sync::mpsc;
-pub enum State {
+enum State {
     Prepare,
     Ok(Box<dyn serialport::SerialPort>),
 }
