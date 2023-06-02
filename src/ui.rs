@@ -45,14 +45,13 @@ impl App {
         self.send(MsgHeader::new(tp), err)
     }
     fn call(&mut self) {
-        self.send(
-            msg::Port::new(self.choosed.clone().unwrap()),
-            "send path request failed",
-        )
-        .then(|| {
-            self.send_header(MsgType::Right, "send right request failed")
-                .then(|| self.send_header(MsgType::Query, "send query request failed"))
-        });
+        if let Some(path) = &self.choosed {
+            self.send(msg::Port::new(path.clone()), "send path request failed")
+                .then(|| {
+                    self.send_header(MsgType::Right, "send right request failed")
+                        .then(|| self.send_header(MsgType::Query, "send query request failed"))
+                });
+        }
     }
     fn open(&mut self) {
         if self.is_open {
@@ -100,7 +99,7 @@ impl Application for App {
                 choosed: None,
                 available_ports: config::available_ports(),
                 ratelist: msg::RateList::default(),
-                config: config::Config::default(),
+                config: config::Config::new(),
                 is_open: false,
             },
             window::resize(750, 245),
